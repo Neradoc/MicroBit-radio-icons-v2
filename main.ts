@@ -46,8 +46,6 @@ radio.onReceivedValue(function (name, value) {
         }
     } else if (name == "stage") {
         stage = value
-        serial.writeString("Received stage: ")
-        serial.writeString("" + (stage))
         serial.writeString(" => ")
         serial.writeLine("" + (stageNames[stage]))
     }
@@ -73,13 +71,12 @@ delays = 1800
 mode = 0
 stage = 0
 icons = []
-stageNames = []
 icons.push(images.iconImage(IconNames.SmallDiamond))
 stageNames.push("Piece")
 icons.push(images.iconImage(IconNames.Diamond))
-stageNames.push("Etoile")
-icons.push(images.iconImage(IconNames.Target))
 stageNames.push("Rond")
+icons.push(images.iconImage(IconNames.Target))
+stageNames.push("Etoile")
 icons.push(images.iconImage(IconNames.Chessboard))
 stageNames.push("Explosion")
 basic.forever(function () {
