@@ -28,7 +28,6 @@ input.onButtonPressed(Button.A, function () {
     basic.pause(2000)
 })
 input.onButtonPressed(Button.B, function () {
-    stage = 0
     radio.sendValue("stage", stage)
     basic.showArrow(ArrowNames.East)
     basic.pause(2000)
@@ -111,7 +110,8 @@ control.inBackground(function () {
             serial.writeLine("" + (stage))
             radio.sendValue("stage", stage)
             basic.showArrow(ArrowNames.North)
-            basic.pause(11000)
+            basic.pause(10000)
+            basic.pause(randint(1000, 10000))
         } else if (mode == 2) {
             basic.pause(5000)
         }
